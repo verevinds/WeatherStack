@@ -10,6 +10,7 @@ ____
 Открываем терминал заходим в скопированный проект.
 Пишем команду npm install:
 ```cmd
+    cd WeatherStack
     npm install
 ```
 
