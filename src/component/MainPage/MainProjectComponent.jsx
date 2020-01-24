@@ -42,7 +42,8 @@ class MainProjectComponent extends PureComponent {
               type = { 'search' } 
               onChange = { this.onChange }/>
             
-            <button 
+            <button
+              className = {'search-button'}
               onClick={()=>{
                 this.props.history.push('/InformationPage')
                 }}>
