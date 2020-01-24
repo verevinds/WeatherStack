@@ -97,7 +97,8 @@ module.exports = {
     },
     resolve:{
         alias: {
-            '@styles': path.resolve(__dirname,'src/styles')
+            '@styles': path.resolve(__dirname,'src/styles'),
+            '@redux': path.resolve(__dirname,'src/redux')
         }
     },
     optimization: optimization(),

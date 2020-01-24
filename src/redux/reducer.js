@@ -1,11 +1,14 @@
 import { combineReducers } from 'redux';
+import { 
+  CHANGE_SEARCH,
+  CLICK_LOCATION
+} from './constants';
 
 const initialState = {
-  search: '',
   uploadData: false,
   params: {
     access_key: 'e65fcbdb6b7edea6d370e4fd261bf357',
-    query: 'Новосибирск'
+    query: ''
   },
   city: [
     {
@@ -15,13 +18,10 @@ const initialState = {
       "city": "Санкт-Петербург"
     },
     {
-      "city": "Екатеренбург"
+      "city": "Екатеринбург"
     },
     {
       "city": "Новосибирск"
-    },
-    {
-      "city": "Новокузнецк"
     },
     {
       "city": "Самара"
@@ -35,6 +35,24 @@ const initialState = {
 ]
 };
 const reducer = (state = initialState, action) => {
+  switch(action.type){
+    case CHANGE_SEARCH:
+    return{
+      ...state,
+      params: {
+        ...state.params,
+        query: action.text
+      }
+    }
+    case CLICK_LOCATION:
+      return{
+        ...state,
+        params: {
+          ...state.params,
+          query: action.text
+        }
+      }
+  }
   return state;
 };
 const CombineReducers = combineReducers({

@@ -12,19 +12,22 @@ class InformationPage extends PureComponent{
 
 
   componentDidMount() {
+    let { query } = this.props.store.initialState.params
+    query ? query : query = 'Новосибирск'
+
     const params = {
       access_key: 'e65fcbdb6b7edea6d370e4fd261bf357',
-      query: 'Новосибирск'
+      query: query
     }
 
     axios.get('http://api.weatherstack.com/current', {params})
-    .then(response => {
-      const current = response.data.current
-      this.setState({current})
-      
-      const location = response.data.location
-      this.setState({location})
-    })
+      .then(response => {
+        const current = response.data.current
+        this.setState({current})
+        
+        const location = response.data.location
+        this.setState({location})
+      })
       .catch(error => {
         console.log(error)
       });
@@ -53,7 +56,7 @@ class InformationPage extends PureComponent{
 
 function mapStateToProps(state){
   return {
-    info: state
+    store: state
   }
 }
 

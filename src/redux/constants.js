@@ -1,0 +1,2 @@
+export const CHANGE_SEARCH = "CHANGE_SEARCH"
+export const CLICK_LOCATION = "CLICK_LOCATION"
