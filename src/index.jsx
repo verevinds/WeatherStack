@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import store from './redux/store';
 import NavBar from './component/NavBar/NavBar.jsx'
 import MainProjectComponent from './component/MainPage/MainProjectComponent.jsx';
-import InformationPage from './component/InformationPage/InformationPage.jsx'
+import InformationPageComponent from './component/InformationPage/InformationPageComponent.jsx'
 import '@styles/styles.css'
 
 ReactDOM.render(
@@ -13,7 +13,7 @@ ReactDOM.render(
     <BrowserRouter>
       <NavBar />
       <Route exact path='/' component={MainProjectComponent} />
-      <Route path='/InformationPage' component={InformationPage} />
+      <Route path='/InformationPage' component={InformationPageComponent} />
     </BrowserRouter>
     </Provider>, document.getElementById('root')
 );
