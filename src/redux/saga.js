@@ -12,16 +12,17 @@ import{
 import { FETCH_LOCATION } from './constants'
 
 export function* watchFetch() {
-    yield takeLatest(FETCH_LOCATION, fetchAsync)
+    yield takeLatest( FETCH_LOCATION, fetchAsync )
 }
 
-function* fetchAsync(props){
+function* fetchAsync( props ){
     try{
-        yield put(requestWeatherstack())
-        const response = yield call(()=>axios.get(`http://api.weatherstack.com/current?access_key=e65fcbdb6b7edea6d370e4fd261bf357&query=${props.search}`))
-        yield put(onRequestSuccess(response))
-    }catch(error){
-        console.log(error)
+        yield delay(100)
+        yield put( requestWeatherstack() )
+        const response = yield call( () => axios.get(`http://api.weatherstack.com/current?access_key=e65fcbdb6b7edea6d370e4fd261bf357&query=${props.search}` ))
+        yield put( onRequestSuccess( response ) )
+    }catch( error ){
+        console.log( error )
     }
 }
 

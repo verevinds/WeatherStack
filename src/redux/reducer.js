@@ -1,10 +1,10 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from 'redux'
 import { 
   CHANGE_SEARCH,
   CLICK_LOCATION,
   REQUESTED,
   REQUESTED_SUCCEEDED
-} from './constants';
+} from './constants'
 
 const initialState = {
   isLoading: false,
@@ -35,9 +35,9 @@ const initialState = {
       "city": "Омск"
     },
 ]
-};
+}
 const reducer = (state = initialState, action) => {
-  switch(action.type){
+  switch( action.type ){
     case CHANGE_SEARCH:
     return {
       ...state,
@@ -73,4 +73,4 @@ const CombineReducers = combineReducers({
   initialState: reducer
 });
 
-export default CombineReducers;
+export default CombineReducers
