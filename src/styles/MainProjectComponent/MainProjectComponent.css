@@ -1,0 +1,25 @@
+.search{
+    width: 500px;
+    margin: 0 auto;
+}
+
+.search__input{
+    width: 100%;
+}
+
+.listLocation{
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.listLocation__item{
+    width: 100%;
+    margin: 3px;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+}

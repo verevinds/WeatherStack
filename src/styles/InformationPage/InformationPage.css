@@ -1,0 +1,25 @@
+.info-location{
+    width:400px;
+    margin: 0 auto;
+    margin-top: 10px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    box-shadow: 1px 0 5px 5px rgb(0,0,0,0.2);
+    padding: 10px;
+}
+.titelInfo{
+    height: 50px;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.info-location div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.info-location label{
+    text-transform: uppercase;
+    font-size: 2em;
+}
