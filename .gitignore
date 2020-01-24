@@ -1,0 +1,9 @@
+# Ignore the node_modules directory
+node_modules/
+
+#Production project
+dist/
+
+#Ignore yarn file
+yarn-error.log
+yarn.lock
