@@ -1,59 +1,60 @@
-import React from 'react';
+import React, {PureComponent} from 'react';
 import '@styles/InformationPage/InformationPage.css'
+import * as axios from 'axios';
+import {connect} from 'react-redux'
 
-const SecondPage = () => {
-  const info = {
-    "request": {
-        "type": "City",
-        "query": "Новосибирск, Россия",
-        "language": "en",
-        "unit": "m"
-    },
-    "location": {
-        "name": "Новосибирск",
-        "country": "Россия",
-        "region": "Novosibirsk",
-        "lat": "55.041",
-        "lon": "82.934",
-        "timezone_id": "Asia/Novosibirsk",
-        "localtime": "2020-01-24 22:24",
-        "localtime_epoch": 1579904640,
-        "utc_offset": "7.0"
-    },
-    "current": {
-        "observation_time": "03:24 PM",
-        "temperature": -1,
-        "weather_code": 368,
-        "weather_icons": [
-            "https://assets.weatherstack.com/images/wsymbols01_png_64/wsymbol_0027_light_snow_showers_night.png"
-        ],
-        "weather_descriptions": [
-            "Light Snow Shower, Low Drifting Snow"
-        ],
-        "wind_speed": 26,
-        "wind_degree": 190,
-        "wind_dir": "S",
-        "pressure": 1005,
-        "precip": 0.5,
-        "humidity": 93,
-        "cloudcover": 100,
-        "feelslike": -7,
-        "uv_index": 1,
-        "visibility": 3,
-        "is_day": "no"
+
+class InformationPage extends PureComponent{
+  state = {
+    location: {},
+    current: {}
+  }
+
+
+  componentDidMount() {
+    const params = {
+      access_key: 'e65fcbdb6b7edea6d370e4fd261bf357',
+      query: 'Новосибирск'
     }
-}
-  return(
-    <div className={'info-location'}>
-      <div className={'titelInfo'}><h2>{info.location.name}</h2><img src={info.current.weather_icons}/></div>
-      <div><lable>Температура:</lable> <lable>{info.current.temperature} градусов</lable></div>
-      <div><lable>Сила ветра:</lable> <lable>{info.current.wind_speed}км/ч</lable></div>
-      <div><lable>Направление ветра:</lable> <lable>{info.current.wind_dir}</lable></div>
-      <div><lable>Давление:</lable> <lable>{info.current.pressure} MB</lable></div>
-      <div><lable>Влажность:</lable> <lable>{info.current.humidity}%</lable></div>
-    </div>
-  )
+
+    axios.get('http://api.weatherstack.com/current', {params})
+    .then(response => {
+      const current = response.data.current
+      this.setState({current})
+      
+      const location = response.data.location
+      this.setState({location})
+    })
+      .catch(error => {
+        console.log(error)
+      });
+  }
+
+    render() {
+      const {location, current} = this.state
+      
+      return (
+        <div className={'info-location'}>
+          <div className={'titelInfo'}><h2>{location.name}</h2><img src={current.weather_icons}/></div>
+          <div>{location.localtime}</div>
+          <div><p>Температура:</p> <p>{current.temperature}</p></div>
+          <div><p>Сила ветра:</p> <p>{current.wind_speed}км/ч</p></div>
+          <div><p>Направление ветра:</p> <p>{current.wind_dir}</p></div>
+          <div><p>Давление:</p> <p>{current.pressure} MB</p></div>
+          <div><p>Влажность:</p> <p>{current.humidity}%</p></div>
+          <div><p>{current.weather_descriptions}</p></div>
+          <div><p>Облачность:</p><p>{current.cloudcover}</p></div>
+          <div><p>УФ-индекс:</p><p>{current.uv_index}</p></div>
+        </div>
+      )
+    }
+
 }
 
+function mapStateToProps(state){
+  return {
+    info: state
+  }
+}
 
-export default React.memo(SecondPage);
+export default connect(mapStateToProps)(InformationPage)
