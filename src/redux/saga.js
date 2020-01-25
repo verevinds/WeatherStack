@@ -21,7 +21,7 @@ export function* watchFetch() {
 
 function* fetchAsync( props ){
     try{
-        yield delay(100)
+        yield delay(2000)
         yield put( requestWeatherstack() )
         const response = yield call( () => axios.get( `http://api.weatherstack.com/current?access_key=e65fcbdb6b7edea6d370e4fd261bf357&query=${props.search}` ))
         yield put( onRequestSuccess( response ) )

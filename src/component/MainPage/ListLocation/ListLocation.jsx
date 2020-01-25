@@ -1,16 +1,17 @@
 import React from 'react'
 
 const ListLocation = ( props ) => {
+    let key = 0
     return (
         <div className={ 'listLocation' }>
             {props.list.map( item =>
                     <button 
                         to={'/InformationPage'}
                         className={'listLocation__item'} 
-                        key={item.city} 
-                        value={item.city} 
+                        key={key++} 
+                        value={item.name} 
                         onClick={props.fClickLocation}>
-                        {item.city}
+                        {item.name}
                     </button>
                 )
             }

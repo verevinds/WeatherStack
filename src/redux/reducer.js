@@ -3,38 +3,16 @@ import {
   CHANGE_SEARCH,
   CLICK_LOCATION,
   REQUESTED,
-  REQUESTED_SUCCEEDED,
-  REQUESTED_SUCCEEDED_FUTURE
+  REQUESTED_SUCCEEDED
 } from './constants'
 
 const initialState = {
   isLoading: false,
   params: {
     access_key: 'e65fcbdb6b7edea6d370e4fd261bf357',
-    query: ''
+    query: 'Новосибирск'
   },
   city: [
-    {
-      "city": "Москва"
-    },
-    {
-      "city": "Санкт-Петербург"
-    },
-    {
-      "city": "Екатеринбург"
-    },
-    {
-      "city": "Новосибирск"
-    },
-    {
-      "city": "Самара"
-    },
-    {
-      "city": "Ижевск"
-    },
-    {
-      "city": "Омск"
-    },
 ]
 }
 const reducer = (state = initialState, action) => {
@@ -65,6 +43,10 @@ const reducer = (state = initialState, action) => {
         ...state,
         location: action.data.data.location,
         current: action.data.data.current,
+        city: [
+          ...state.city,
+          action.data.data.location
+        ],
         isLoading: true
       }
   }

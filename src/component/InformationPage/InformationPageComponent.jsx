@@ -11,7 +11,6 @@ import InformationMenu from './InformationMenu/InformationMenu.jsx'
 class InformationPageComponent extends PureComponent{
 
     fClickLocation = event => {
-      
       const { fetchLocationFuture } = this.props
       const valButtonSearch = event.target.value
 
