@@ -19,8 +19,5 @@ const DashBoard = (props) =>{
     </div>
   )
 }
-      
-    
-
 
 export default React.memo(DashBoard)
