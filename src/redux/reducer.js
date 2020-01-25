@@ -3,7 +3,8 @@ import {
   CHANGE_SEARCH,
   CLICK_LOCATION,
   REQUESTED,
-  REQUESTED_SUCCEEDED
+  REQUESTED_SUCCEEDED,
+  REQUESTED_SUCCEEDED_FUTURE
 } from './constants'
 
 const initialState = {
