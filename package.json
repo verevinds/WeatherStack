@@ -1,4 +1,26 @@
 {
+
+  "name": "weatherstack",
+  "version": "1.0.0",
+  "description": "A test task for Digital Ecosystems. The app to display the weather from the \"weatherstack.com\" web portal by the selected location.",
+  "main": "webpack.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/verevinds/WeatherStack.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "saga",
+    "git",
+    "weatherstack"
+  ],
+  "author": "Verevin Denis <verevinds@yandex.ru>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/verevinds/WeatherStack/issues"
+  },
+  "homepage": "https://github.com/verevinds/WeatherStack#readme",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --mode production",
     "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open"
