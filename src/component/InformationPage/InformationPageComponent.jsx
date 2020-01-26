@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React, { PureComponent, Fragment } from 'react'
 import '@styles/InformationPage/InformationPage.css'
 import { connect } from 'react-redux'
 import { 
@@ -9,6 +9,12 @@ import InformationMenu from './InformationMenu/InformationMenu.jsx'
 
 
 class InformationPageComponent extends PureComponent{
+
+  componentDidMount(){
+    const { fetchLocationFuture } = this.props
+
+    fetchLocationFuture( this.props.store.initialState.params.query )
+  }
 
     fClickLocation = event => {
       const { fetchLocationFuture } = this.props
@@ -21,7 +27,7 @@ class InformationPageComponent extends PureComponent{
       const { isLoading, location } = this.props.store.initialState
       
       return(
-        <div>
+        <Fragment>
           <InformationMenu 
             name = { this.props.store.initialState.params.query }
             fClickLocation = { this.fClickLocation }
@@ -31,7 +37,7 @@ class InformationPageComponent extends PureComponent{
             isLoading ? location === undefined ? 'В название локации ошибка' 
             : <DashBoard store={this.props.store.initialState}/> : 'Загрузка...'
           }
-        </div>
+        </Fragment>
       ) 
     }
 }

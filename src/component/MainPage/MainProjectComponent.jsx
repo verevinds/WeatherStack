@@ -1,7 +1,7 @@
 import ListLocation from './ListLocation/ListLocation.jsx'
 import InputLocation from './InputLocation/InputLocation.jsx'
 import '@styles/MainProjectComponent/MainProjectComponent.css'
-import React, { PureComponent } from 'react'
+import React, { PureComponent, Fragment } from 'react'
 import { connect } from 'react-redux'
 import { 
   changeSearch,
@@ -34,10 +34,10 @@ class MainProjectComponent extends PureComponent {
     let { query } = this.props.store.params
     
     return(      
-      <div>
+      <Fragment>
         <InputLocation query={query} onChange={this.onChange}/>
         <ListLocation list = { this.props.store.city } fClickLocation = { this.fClickLocation }/>
-      </div>
+      </Fragment>
     ) 
   }
 }
