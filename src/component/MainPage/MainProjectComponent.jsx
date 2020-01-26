@@ -1,4 +1,5 @@
 import ListLocation from './ListLocation/ListLocation.jsx'
+import InputLocation from './InputLocation/InputLocation.jsx'
 import '@styles/MainProjectComponent/MainProjectComponent.css'
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
@@ -34,22 +35,7 @@ class MainProjectComponent extends PureComponent {
     
     return(      
       <div>
-        <div className={ 'search' }>
-            <input 
-              placeholder = "Введите название локации" 
-              value = { query } 
-              className = { 'search__input' } 
-              type = { 'search' } 
-              onChange = { this.onChange }/>
-            
-            <button
-              className = {'search-button'}
-              onClick={()=>{
-                this.props.history.push('/InformationPage')
-                }}>
-              Посмотреть
-            </button>
-        </div>
+        <InputLocation query={query} onChange={this.onChange}/>
         <ListLocation list = { this.props.store.city } fClickLocation = { this.fClickLocation }/>
       </div>
     ) 
