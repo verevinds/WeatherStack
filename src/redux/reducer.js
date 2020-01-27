@@ -32,7 +32,7 @@ const reducer = (state = initialState, action) => {
         ...state,
         params: {
           ...state.params,
-          query: action.text
+          query: action.search
         }
       }
     case REQUESTED:
