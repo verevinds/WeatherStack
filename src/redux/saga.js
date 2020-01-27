@@ -15,7 +15,6 @@ import {
     FETCH_LOCATION_FUTURE,
     CLICK_LOCATION
 } from './constants'
-const querystring =  require('querystring');
 
 export function* watchFetch() {
     yield takeLatest( FETCH_LOCATION, fetchAsync )
