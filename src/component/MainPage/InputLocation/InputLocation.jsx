@@ -14,7 +14,7 @@ const InputLocation = (props) => {
                 <input 
                     value = { 'Посмотреть' } 
                     type = { 'submit' }
-                    className = { 'search-button' } 
+                    className = { 'search__button' } 
                     />
             </form>
         </div>

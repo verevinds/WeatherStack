@@ -10,9 +10,9 @@
     color: #1071FF;
     font-weight: 300;
     font-size: 14px;
-    padding: 3px;
+    padding: 10px;
 }
-.search-button{
+.search__button{
     width: 20%;
     text-align:center;
     text-decoration: none;
@@ -21,14 +21,14 @@
     border: #1071FF 1px solid;
     background-color: unset;
     color: #1071FF;
-    padding: 3px;
+    padding: 10px;
     padding-left: 5px;
     padding-right: 5px;
     border-radius: 0px;
     transition: 0.5s;
     cursor: pointer;
 }
-.search-button:hover{
+.search__button:hover{
     color: #fff;
     background-color:  #1071FF;
 }
