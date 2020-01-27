@@ -6,7 +6,7 @@ import '@styles/NavBar/NavBar.css'
 const NavBar = () => (
   <div className={ 'body' }>
     <NavLink to="/" className={ 'item' }>Главная</NavLink>
-    <NavLink to="/InformationPage" className={ 'item' }>Информация</NavLink>
+    <NavLink to="/informationpage" className={ 'item' }>Информация</NavLink>
   </div>
 )
 

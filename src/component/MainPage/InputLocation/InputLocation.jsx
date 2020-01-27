@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const InputLocation = (props) => {
     return(
@@ -10,13 +11,7 @@ const InputLocation = (props) => {
             type = { 'search' } 
             onChange = { props.onChange }/>
             
-            <button
-            className = {'search-button'}
-            onClick={()=>{
-                this.props.history.push('/InformationPage')
-                }}>
-            Посмотреть
-            </button>
+            <NavLink to={'/informationpage'} className = {'search-button'}>Посмотреть</NavLink>
         </div>
     )
 } 
