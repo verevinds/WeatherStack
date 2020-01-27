@@ -16,7 +16,7 @@ const DashBoard = (props) =>{
       <div><p>{current.weather_descriptions}</p></div>
       <div><p>Облачность:</p><p>{current.cloudcover}</p></div>
       <div><p>УФ-индекс:</p><p>{current.uv_index}</p></div>
-    </div>
+    </div> 
   )
 }
 

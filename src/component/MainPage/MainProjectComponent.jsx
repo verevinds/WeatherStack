@@ -12,30 +12,38 @@ import {
 class MainProjectComponent extends PureComponent {
 
     onChange = event => {
-      const { changeSearch, fetchLocation } = this.props
-      const valInputSearch = event.target.value
+      const { changeSearch } = this.props
 
-      changeSearch( valInputSearch )
-      if ( valInputSearch.length >= 3 ) {
-        fetchLocation( valInputSearch )
-      }
+      changeSearch( event.target.value )
     }
 
-    fClickLocation = event => {
+    handleSubmit = event => {
+      event.preventDefault();
+      const { fetchLocation } = this.props
+      let { query } = this.props.store.params
+      
+      fetchLocation( query )
+      this.props.history.push( '/InformationPage' )
+    }
+
+    fClickLocation = (event) => {
       const { clickLocation, fetchLocation } = this.props
       const valButtonSearch = event.target.value
 
-      fetchLocation( valButtonSearch )
       clickLocation( valButtonSearch )
       this.props.history.push( '/InformationPage' )
     }
 
   render() {
     let { query } = this.props.store.params
-    
+
     return(      
       <Fragment>
-        <InputLocation query={query} onChange={this.onChange}/>
+        <InputLocation 
+        query={query} 
+        handleSubmit = { this.handleSubmit } 
+        fClickLocation = { this.fClickLocation }
+        onChange = { this.onChange }/>
         <ListLocation list = { this.props.store.city } fClickLocation = { this.fClickLocation }/>
       </Fragment>
     ) 

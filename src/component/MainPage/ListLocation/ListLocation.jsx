@@ -5,13 +5,13 @@ const ListLocation = ( props ) => {
     return (
         <div className={ 'listLocation' }>
             {props.list.map( item =>
-                    <button 
-                        to={'/InformationPage'}
-                        className={'listLocation__item'} 
-                        key={key++} 
-                        value={item.name} 
-                        onClick={props.fClickLocation}>
-                        {item.name}
+                    item === undefined ? null : <button 
+                        to = { '/InformationPage' }
+                        className = { 'listLocation__item' }
+                        key = { key++ }
+                        value = { item.name }
+                        onClick = { props.fClickLocation }>
+                        { item.name }
                     </button>
                 )
             }

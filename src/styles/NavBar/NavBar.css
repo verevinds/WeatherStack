@@ -4,13 +4,16 @@
     justify-content: center;
     padding: 10px;
 }
+.active {
+    font-weight: 800;
+}
 .item{
     padding: 0 10px;
     border-left: 1px solid rgba(0,0,0,0.5);
     text-shadow: none;
     color: #333;
     text-decoration: none;
-    transition: 0.2s 0.7s;
+    transition: color 0.1s ease-in-out;
 }
 .item:hover{
     color: rgb(189, 62, 62);

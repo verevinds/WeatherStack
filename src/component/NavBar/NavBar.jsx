@@ -5,8 +5,8 @@ import '@styles/NavBar/NavBar.css'
 
 const NavBar = () => (
   <div className={ 'body' }>
-    <NavLink to="/" className={ 'item' }>Главная</NavLink>
-    <NavLink to="/informationpage" className={ 'item' }>Информация</NavLink>
+    <NavLink exact to="/" className={ 'item' } activeClassName = { 'active' }>Главная</NavLink>
+    <NavLink to="/informationpage" className={ 'item' }  activeClassName = { 'active' }>Информация</NavLink>
   </div>
 )
 

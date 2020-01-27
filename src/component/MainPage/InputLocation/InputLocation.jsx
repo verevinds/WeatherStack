@@ -1,17 +1,22 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
 
 const InputLocation = (props) => {
     return(
         <div className={ 'search' }>
-            <input 
-            placeholder = "Введите название локации" 
-            value = { props.query } 
-            className = { 'search__input' } 
-            type = { 'search' } 
-            onChange = { props.onChange }/>
-            
-            <NavLink to={'/informationpage'} className = {'search-button'}>Посмотреть</NavLink>
+            <form onSubmit = {props.handleSubmit}>
+                <input 
+                placeholder = "Введите название локации" 
+                defaultValue = { props.query ? props.query : null} 
+                className = { 'search__input' } 
+                type = { 'search' } 
+                onChange = { props.onChange }/>
+                
+                <input 
+                    value = { 'Посмотреть' } 
+                    type = { 'submit' }
+                    className = { 'search-button' } 
+                    />
+            </form>
         </div>
     )
 } 

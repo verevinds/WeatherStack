@@ -10,12 +10,6 @@ import InformationMenu from './InformationMenu/InformationMenu.jsx'
 
 class InformationPageComponent extends PureComponent{
 
-  componentDidMount(){
-    const { fetchLocationFuture } = this.props
-
-    fetchLocationFuture( this.props.store.initialState.params.query )
-  }
-
     fClickLocation = event => {
       const { fetchLocationFuture } = this.props
       const valButtonSearch = event.target.value
@@ -28,14 +22,19 @@ class InformationPageComponent extends PureComponent{
       
       return(
         <Fragment>
-          <InformationMenu 
-            name = { this.props.store.initialState.params.query }
-            fClickLocation = { this.fClickLocation }
-            />
-
           {
-            isLoading ? location === undefined ? 'В название локации ошибка' 
-            : <DashBoard store={this.props.store.initialState}/> : 'Загрузка...'
+            this.props.store.initialState.params.query === undefined 
+            ? 'Вернитесь на главную страницу. Заполните поле локации и нажмите "просмотреть"' 
+            : isLoading !== true 
+            ? 'Загрузка...' : location === undefined 
+            ? 'В название локации ошибка' :
+              <Fragment>
+                <InformationMenu 
+                  name = { this.props.store.initialState.params.query }
+                  fClickLocation = { this.fClickLocation }
+                  />
+              <DashBoard store={this.props.store.initialState}/>
+              </Fragment>
           }
         </Fragment>
       ) 
