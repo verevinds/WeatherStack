@@ -27,7 +27,7 @@ class MainProjectComponent extends PureComponent {
     }
 
     fClickLocation = (event) => {
-      const { clickLocation, fetchLocation } = this.props
+      const { clickLocation  } = this.props
       const valButtonSearch = event.target.value
 
       clickLocation( valButtonSearch )

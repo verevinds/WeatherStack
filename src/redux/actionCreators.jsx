@@ -10,7 +10,7 @@ import{
 } from './constants'
 
 export const changeSearch = text => ({ type: CHANGE_SEARCH, text })
-export const clickLocation = text => ({ type: CLICK_LOCATION, text })
+export const clickLocation = search => ({ type: CLICK_LOCATION, search })
 export const requestWeatherstack = () => ({ type: REQUESTED })
 export const onRequestSuccess = data => ({ type: REQUESTED_SUCCEEDED, data })
 export const onRequestSuccessHistory = data => ({ type: REQUESTED_SUCCEEDED_HISTORY, data })

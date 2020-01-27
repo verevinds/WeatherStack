@@ -19,23 +19,20 @@ class InformationPageComponent extends PureComponent{
 
     render() {
       const { isLoading, location } = this.props.store.initialState
-      
+
+      if(isLoading && location){
+        return(
+          <Fragment>
+            <InformationMenu 
+              name = { this.props.store.initialState.params.query }
+              fClickLocation = { this.fClickLocation }
+              />
+            <DashBoard store={this.props.store.initialState}/>
+          </Fragment>
+        )
+      }
       return(
         <Fragment>
-          {
-            this.props.store.initialState.params.query === undefined 
-            ? 'Вернитесь на главную страницу. Заполните поле локации и нажмите "просмотреть"' 
-            : isLoading !== true 
-            ? 'Загрузка...' : location === undefined 
-            ? 'В название локации ошибка' :
-              <Fragment>
-                <InformationMenu 
-                  name = { this.props.store.initialState.params.query }
-                  fClickLocation = { this.fClickLocation }
-                  />
-              <DashBoard store={this.props.store.initialState}/>
-              </Fragment>
-          }
         </Fragment>
       ) 
     }

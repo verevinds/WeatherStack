@@ -1,0 +1,15 @@
+.alert {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+    padding: 15px;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    border: 1px solid transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.alert-exit{
+    cursor: pointer;
+}

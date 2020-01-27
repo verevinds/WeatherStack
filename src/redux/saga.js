@@ -27,9 +27,8 @@ function* fetchAsync( props ){
         yield put( requestWeatherstack() )
         const response = yield call( () => axios.get( `http://api.weatherstack.com/current?access_key=e65fcbdb6b7edea6d370e4fd261bf357&query=${props.search}`))
         yield put( response.data.error ? onRequestError(response.data.error) : onRequestSuccess( response ) )
-
     }catch( error ){
-        console.log(error.json())
+        console.log(error.message)
     }
 }
 
@@ -48,7 +47,6 @@ function* fetchAsyncHistory( props ){
         yield put( requestWeatherstack() )
         const response = yield call( () => axios.get( `http://api.weatherstack.com/current?access_key=e65fcbdb6b7edea6d370e4fd261bf357&query=${props.search}` ))
         yield put( response.data.error ? onRequestError(response.data.error) : onRequestSuccessHistory( response ) )
-
     }catch( error ){
         console.log(error.message)
     }

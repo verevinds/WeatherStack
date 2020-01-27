@@ -38,6 +38,9 @@ const reducer = (state = initialState, action) => {
     case REQUESTED:
       return {
         ...state,
+        error: undefined,
+        location: undefined,
+        current: undefined,
         isLoading: false
       }
     case REQUESTED_SUCCEEDED:
@@ -61,7 +64,7 @@ const reducer = (state = initialState, action) => {
     case REQUESTED_ERROR:
       return {
         ...state,
-        error: action.info,
+        error: action.error,
         isLoading: true
       }
   }
