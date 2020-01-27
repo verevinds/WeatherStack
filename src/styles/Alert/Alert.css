@@ -2,9 +2,10 @@
     color: #856404;
     background-color: #fff3cd;
     border-color: #ffeeba;
-    padding: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8em;
+    padding: 5px;
     padding-left: 30px;
-    margin-bottom: 10px;
     border: 1px solid transparent;
     display: flex;
     flex-direction: row;

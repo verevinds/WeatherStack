@@ -44,6 +44,7 @@ class MainProjectComponent extends PureComponent {
         handleSubmit = { this.handleSubmit } 
         fClickLocation = { this.fClickLocation }
         onChange = { this.onChange }/>
+
         <ListLocation list = { this.props.store.city } fClickLocation = { this.fClickLocation }/>
       </Fragment>
     ) 

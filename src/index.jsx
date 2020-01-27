@@ -12,8 +12,8 @@ import AlertComponent from './component/Alert/AlertComponent.jsx'
 ReactDOM.render(
   <Provider store = { store }>
     <BrowserRouter>
-      <NavBar />
       <AlertComponent />
+      <NavBar />
       <Switch>
         <Route exact path = '/' component = { MainProjectComponent } />
         <Route path ='/informationpage' component ={ InformationPageComponent } />

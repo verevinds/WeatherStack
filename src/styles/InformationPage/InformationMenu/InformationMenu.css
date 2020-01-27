@@ -2,10 +2,10 @@
     width: 400px;
     margin: 0 auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
 }
-.information-menu button{
+.information-menu__button{
     width: 200px;
     text-align:center;
     text-decoration: none;
@@ -21,7 +21,7 @@
     transition: 0.5s;
     cursor: pointer;
 }
-.information-menu button:hover{
+.information-menu__button:hover{
     color: #fff;
     background-color:  #1071FF;
 }
