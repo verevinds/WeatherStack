@@ -13,7 +13,7 @@ class InformationPageComponent extends PureComponent{
     fClickLocation = event => {
       const { fetchLocationFuture } = this.props
       const valButtonSearch = event.target.value
-      console.log(valButtonSearch)
+      
       fetchLocationFuture( valButtonSearch )
     }
 
