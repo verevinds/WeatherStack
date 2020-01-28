@@ -7,12 +7,12 @@ import NavBar from './component/NavBar/NavBar.jsx'
 import MainProjectComponent from './component/MainPage/MainProjectComponent.jsx'
 import InformationPageComponent from './component/InformationPage/InformationPageComponent.jsx'
 import '@styles/styles.css'
-import AlertComponent from './component/Alert/AlertComponent.jsx'
+import Alert from './component/Alert/Alert.jsx'
 
 ReactDOM.render(
   <Provider store = { store }>
     <BrowserRouter>
-      <AlertComponent />
+      <Alert />
       <NavBar />
       <Switch>
         <Route exact path = '/' component = { MainProjectComponent } />

@@ -1,15 +1,23 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import '@styles/Alert/Alert.css'
+import { onRequestError } from '../../redux/actionCreators.jsx';
 
-const Alert = ( props ) => {
-    const [viewError, setViewError] = useState(true)
+const Alert = () => {
+    const error = useSelector( state => state.initialState.error )
+    const dispatch = useDispatch();
 
-    if( viewError )
+    if( error )
         return (
             <div className = { 'alert' }>
-                <pre>Внимание! Ошибка { props.code }: { props.info }</pre>
-                <pre className = { 'alert-exit' } onClick = { () => setViewError( false )}>&#10006;</pre>
+                <pre>Внимание! Ошибка { error.code }: { error.info }</pre>
+                <pre 
+                    className = { 'alert-exit' } 
+                    onClick = {( () => dispatch( onRequestError(null) ) )}
+                >&#10006;</pre>
             </div>
         )
+
     return null
 }
 
