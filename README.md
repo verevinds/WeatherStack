@@ -1,4 +1,6 @@
 # WeatherStack
+View the weather forecast by location
+
 ## Loading the project
 ____
 To download the project in the terminal, we prescribe:
