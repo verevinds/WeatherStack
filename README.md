@@ -1,38 +1,40 @@
 # WeatherStack
-## Загрузка проекта
+## Loading the project
 ____
-Для загрузки проекта в терминале прописываем:
+To download the project in the terminal, we prescribe:
 ```git
     git clone https://github.com/verevinds/WeatherStack.git
 ```
-## Установка проекта
+## Setting up a project
 ____
-Открываем терминал заходим в скопированный проект.
-Пишем команду npm install:
+Open the terminal go into the copied project.
+Writing the npm install command:
 ```cmd
     cd WeatherStack
     npm install
 ```
 
-## Запуск проекта
+## Start the project
 ____
-Для запуска проекта можно воспользоваться скриптом "start"
+You can use the "start" script to start the project
 ```cmd
     npm run start
 ```
-или прописать в ручную команду для запуска:
+
+or write to a manual command to run:
 ```cmd
     npx cross-env NODE_ENV=development webpack-dev-server --mode development --open
 ```
 
-## Сборка проекта в продакшен
+## Build a project in production
 
 ____
-Для запуска проекта можно воспользоваться скриптом "start"
+You can use the "start" script to start the project
 ```cmd
     npm run build
 ```
-или прописать в ручную команду для запуска:
+
+or write to a manual command to run:
 ```cmd
     cross-env NODE_ENV=production webpack --mode production
 ```
